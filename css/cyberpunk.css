@@ -389,7 +389,7 @@ th:not([align]) {
 }
 html {
   background-color: #000;
-  font-size: 14px;
+  font-size: 13px;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   min-width: 300px;
@@ -11617,8 +11617,8 @@ figure.highlight .section {
 @media screen and (min-width: 1280px) {
   .is-1-column .container,
   .is-2-column .container {
-    max-width: 1104px;
-    width: 1104px;
+    max-width: 1184px;
+    width: 1184px;
   }
 }
 @media screen and (min-width: 1472px) {
