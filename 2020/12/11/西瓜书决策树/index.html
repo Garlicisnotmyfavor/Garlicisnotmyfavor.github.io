@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="zh"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta><title>西瓜书决策树 - Garlicisnotmyfavor</title><link rel="manifest" href="/manifest.json"><meta name="application-name" content="Garlicisnotmyfavor"><meta name="msapplication-TileImage" content="/img/favicon.svg"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="Garlicisnotmyfavor"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta description="第四章，决策树"><meta property="og:type" content="blog"><meta property="og:title" content="西瓜书决策树"><meta property="og:url" content="http://garlicisnotmyfavor.xyz/2020/12/11/%E8%A5%BF%E7%93%9C%E4%B9%A6%E5%86%B3%E7%AD%96%E6%A0%91/"><meta property="og:site_name" content="Garlicisnotmyfavor"><meta property="og:description" content="第四章，决策树"><meta property="og:locale" content="zh_CN"><meta property="og:image" content="https://desk-fd.zol-img.com.cn/t_s960x600c5/g5/M00/0A/0C/ChMkJlwbaPmIfjr8AAHXNlQ9tyQAAt5PAMXql0AAddO522.jpg"><meta property="article:published_time" content="2020-12-11T08:12:07.000Z"><meta property="article:modified_time" content="2020-12-12T13:04:43.259Z"><meta property="article:author" content="Garlic"><meta property="article:tag" content="ML"><meta property="article:tag" content="决策树"><meta property="twitter:card" content="summary"><meta property="twitter:image" content="https://desk-fd.zol-img.com.cn/t_s960x600c5/g5/M00/0A/0C/ChMkJlwbaPmIfjr8AAHXNlQ9tyQAAt5PAMXql0AAddO522.jpg"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"http://garlicisnotmyfavor.xyz/2020/12/11/%E8%A5%BF%E7%93%9C%E4%B9%A6%E5%86%B3%E7%AD%96%E6%A0%91/"},"headline":"Garlicisnotmyfavor","image":["https://desk-fd.zol-img.com.cn/t_s960x600c5/g5/M00/0A/0C/ChMkJlwbaPmIfjr8AAHXNlQ9tyQAAt5PAMXql0AAddO522.jpg"],"datePublished":"2020-12-11T08:12:07.000Z","dateModified":"2020-12-12T13:04:43.259Z","author":{"@type":"Person","name":"Garlic"},"description":"第四章，决策树"}</script><link rel="canonical" href="http://garlicisnotmyfavor.xyz/2020/12/11/%E8%A5%BF%E7%93%9C%E4%B9%A6%E5%86%B3%E7%AD%96%E6%A0%91/"><link rel="icon" href="/img/favicon.svg"><link rel="stylesheet" href="https://cdnjs.loli.net/ajax/libs/font-awesome/5.12.0/css/all.min.css"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-light.min.css"><link rel="stylesheet" href="https://fonts.loli.net/css2?family=Ubuntu:wght@400;600&amp;family=Source+Code+Pro"><link rel="stylesheet" href="/css/default.css"><style>body>.footer,body>.navbar,body>.section{opacity:0}</style><!--!--><!--!--><!--!--><script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" defer></script><!--!--><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/cookieconsent/3.1.1/cookieconsent.min.css"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/1.6.8/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/justifiedGallery/3.7.0/css/justifiedGallery.min.css"><!--!--><!--!--><!--!--><script src="https://cdnjs.cloudflare.com/ajax/libs/pace/1.0.2/pace.min.js"></script><!--!--><!--!--><meta name="generator" content="Hexo 5.2.0"></head><body class="is-2-column"><nav class="navbar navbar-main"><div class="container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/">garlicisnotmyfavor</a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/">首页</a><a class="navbar-item" href="/archives">归档</a><a class="navbar-item" href="/categories">分类</a><a class="navbar-item" href="/tags">标签</a><a class="navbar-item" href="/about">About</a></div><div class="navbar-end"><a class="navbar-item" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/ppoffice/hexo-theme-icarus"><i class="fab fa-github"></i></a><a class="navbar-item is-hidden-tablet catalogue" title="目录" href="javascript:;"><i class="fas fa-list-ul"></i></a><a class="navbar-item search" title="搜索" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-9-widescreen"><div class="card"><div class="card-image"><span class="image is-7by3"><img class="fill" src="https://desk-fd.zol-img.com.cn/t_s960x600c5/g5/M00/0A/0C/ChMkJlwbaPmIfjr8AAHXNlQ9tyQAAt5PAMXql0AAddO522.jpg" alt="西瓜书决策树"></span></div><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2020-12-11T08:12:07.000Z" title="2020-12-11T08:12:07.000Z">2020-12-11</time>发表</span><span class="level-item"><time dateTime="2020-12-12T13:04:43.259Z" title="2020-12-12T13:04:43.259Z">2020-12-12</time>更新</span><span class="level-item"><a class="link-muted" href="/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/">机器学习</a><span> / </span><a class="link-muted" href="/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/%E8%A5%BF%E7%93%9C%E4%B9%A6/">西瓜书</a></span><span class="level-item">11 分钟读完 (大约1695个字)</span><span class="level-item" id="busuanzi_container_page_pv"><span id="busuanzi_value_page_pv">0</span>次访问</span></div></div><h1 class="title is-3 is-size-4-mobile">西瓜书决策树</h1><div class="content"><p>第四章，决策树</p>
+<a id="more"></a>
+
+<h3 id="基本流程"><a href="#基本流程" class="headerlink" title="基本流程"></a>基本流程</h3><p>决策树处理分类问题，其学习目的就是产生一个泛化能力强，即处理未见示例能力强的决策树。算法流程如下图所示：</p>
+<img src="1.png" width = "480" height = "280" align=center />
+
+<p>其中在三类情况下会return，即不继续划分：</p>
+<ul>
+<li>D中样本都属于一个类别，直接将这个类别作为节点类别，不需要划分</li>
+<li>A属性集为空或者D样本在属性集中无区别，也就是D的样本无法从属性数据中看出其类别区分，因此这里直接将他们中数量最多的样本的类别作为这个节点的类别，这是利用了一个后验分布</li>
+<li>当选取的子样本集为空时，其节点类别直接使用父节点中数量最多的样本的类别，这里利用的先验分布</li>
+</ul>
+<p>对于这个算法图，不是很理解其中for循环中的内容，目前的感觉是找到一个区分度比较高的属性，根据这个属性值对大样本做一个子集划分，然后将每个子集递归拿进去继续划分（此时就可以去除掉这个属性，因为每个子集中样本的这个属性值都是相等的），写到这里，感觉我又懂了。😄</p>
+<h3 id="划分选择"><a href="#划分选择" class="headerlink" title="划分选择"></a>划分选择</h3><p>划分选择就是对应上面代码的第8行，选择最优划分属性。</p>
+<h4 id="信息增益"><a href="#信息增益" class="headerlink" title="信息增益"></a>信息增益</h4><p>“信息熵”是度量样本集合纯度最常用的指标，同时我们希望决策树的最终节点的划分能够越纯越好，其表达式为：<br>$$<br>Ent(D) = - \sum_{k=1}^{|y|}p_klog_2P_k<br>$$<br>其中$p_k$代表集合D中第k类样本所占比例，这里$Ent(D)$值越小，纯度越高。</p>
+<p>可以看到在第8行代码中我们要选择一个能够很好划分D的属性a，但这里的判断依据应当是什么呢？既然有了纯度的检验概念，我们可以将纯度越高作为我们的判断依据，那就可以去比较用不同的属性来划分后，纯度的增加最大的那个，用$Gain(D,a)$表示纯度增加，专业点说是“信息增益”，那么我们的优化目标就是：$a_* = arg max Gain(D,a)$，如何计算这个变化值$Gain(D,a)$呢？</p>
+<p>在我们对一个D依照a做划分后，需要对每个节点分配不同的权重，很直接的选择是按照这个划分的样本数量安排权重，$Garin$表达式呼之欲出：<br>$$<br>Gain(D,a) = Ent(D)-\sum_{v=1}^V \frac {|D^v|}{|D|} Ent(D^v)<br>$$</p>
+<h4 id="增益率"><a href="#增益率" class="headerlink" title="增益率"></a>增益率</h4><p> 使用信息增益的缺点是偏向于可取值数目多的属性（直观理解就是它的纯度很高，如变化这种唯一性的），为平衡这一点提出了一个“增益率”：<br>$$<br>Gain_ratio(D,a) = \frac {Gain(D,a)}{IV(a)}<br>$$</p>
+<p>$$<br>IV(a) = - \sum_{v=1}^V \frac {|D^v|}{|D|}log_2 \frac {|D^v|}{|D|}<br>$$</p>
+<p>增益率对可取值数目较少的属性有所偏好[1]。他们容易反复横跳，因此最后采用的是一个启发式：从候选划分属性中找到信息增益高于平均水平的属性，再从中选择增益率最高的。</p>
+<h4 id="基尼指数"><a href="#基尼指数" class="headerlink" title="基尼指数"></a>基尼指数</h4><p>$$<br>Gini(D) = 1- \sum_{k=1}^{|y|}p_k^2<br>$$</p>
+<p>表示的是从D中随机抽取两个样本，其类别标记不一样的概率。优化目标是：<br>$$<br>Gini_index(D,a) = \sum_{v=1}^V \frac {|D^v|}{|D|} Gini(D^v)<br>$$<br>最终需要的是：$a_* = arg min Gini_index(D,a)$</p>
+<h3 id="剪枝处理"><a href="#剪枝处理" class="headerlink" title="剪枝处理"></a>剪枝处理</h3><p>剪枝处理是为了解决过拟合问题，目前有两种方式，其中后剪枝得到的树通常比预剪枝的欠拟合风险小，但因为是在整个树生成结束后剪枝，因此其复杂度更高。</p>
+<h4 id="预剪枝"><a href="#预剪枝" class="headerlink" title="预剪枝"></a>预剪枝</h4><p>是否剪枝的判断依据：在验证集中的正确率表现。缺陷是基于“贪心”，只看这一步的好坏，不管后面。下图分别为未剪枝和预剪枝示例。</p>
+<img src="2.png" width = "480" height = "280" align=center />
+
+<img src="3.png" width = "450" height = "220" align=center />
+
+<h4 id="后剪枝"><a href="#后剪枝" class="headerlink" title="后剪枝"></a>后剪枝</h4><img src="4.png" width = "480" height = "250" align=center />
+
+
+
+<h3 id="连续与缺失值"><a href="#连续与缺失值" class="headerlink" title="连续与缺失值"></a>连续与缺失值</h3><h4 id="连续值处理"><a href="#连续值处理" class="headerlink" title="连续值处理"></a>连续值处理</h4><p>处理方法是连续属性离散化，最简单的是“二分法”，即对这个属性找到一个划分点$t$，然后去判断选择这个属性这个划分的条件下对整个模型的优化能力。如果这个样本关于这个连续属性的取值有n个，那么可以选择的划分点有n-1个，即排序后每两个点之间。进一步可以对信息增益表达式做修改：<br>$$<br>Gain(D,a) = max Gain(D,a,t) = max Ent(D)-\sum_{\lambda \in {-,+}}  \frac {|D_t^\lambda|}{|D|}Ent(D_t^{\lambda})<br>$$<br>但区别于离散属性的另外的点还在于，连续属性后续还可以使用来划分。 </p>
+<h4 id="缺失值处理"><a href="#缺失值处理" class="headerlink" title="缺失值处理"></a>缺失值处理</h4><p>先把一些表达式给出来。</p>
+<p>$\tilde D$：$D$中在属性$a$上没有缺失值的子集</p>
+<p>$\tilde D^v$：若$a$有v个属性取值，则它表示取值为v的样本子集</p>
+<p>$\tilde D^k$：$\tilde {D}$中的第k类样本子集</p>
+<p>$\omega_x$：给每个样本赋予的权重<br>$$<br>\rho =\frac {\sum_{x \in \tilde D} \omega_x}{\sum_{x \in D} \omega_x}<br>$$</p>
+<p>$$<br>\tilde p_k =\frac {\sum_{x \in \tilde D_k} \omega_x}{\sum_{x \in \tilde D} \omega_x}<br>$$</p>
+<p>$$<br>\tilde r_v =\frac {\sum_{x \in \tilde D_v} \omega_x}{\sum_{x \in \tilde D} \omega_x}<br>$$</p>
+<p>需要解决两个问题：</p>
+<ul>
+<li><p>如何在属性值缺失的情况下进行划分属性选择；</p>
+<p>重点在于“选择”，这里将会用$\rho$来减弱对缺失属性的选择可能，推广信息增益表达式为<br>$$<br>Gain(D,a) = \rho \times Gain(\tilde D,a)<br>$$</p>
+</li>
+<li><p>给定划分属性，若样本在该属性上的值缺失，如何对样本进行划分；</p>
+<p>重点在于“划分”，将缺失的样本的权重按照每个分类的比例，即$\tilde r_v$来分散到不同的节点中。</p>
+</li>
+</ul>
+<h3 id="多变量决策树"><a href="#多变量决策树" class="headerlink" title="多变量决策树"></a>多变量决策树</h3><h3 id="习题"><a href="#习题" class="headerlink" title="习题"></a>习题</h3><h3 id="后续扩展"><a href="#后续扩展" class="headerlink" title="后续扩展"></a>后续扩展</h3><p>[1] 这里$IV(a)$表达式和之前的$Ent(D^v)$的不同之处，理解上比较绕</p>
+<hr>
+<h5 id="碎碎念"><a href="#碎碎念" class="headerlink" title="碎碎念"></a>碎碎念</h5><p> 发现我的封面图很多都裂了，那就随便找些个填上，最近来不及搞这些细节了。图书馆好冷呀，心酸…💔</p>
+</div><div class="article-licensing box"><div class="licensing-title"><p>西瓜书决策树</p><p><a href="http://garlicisnotmyfavor.xyz/2020/12/11/%E8%A5%BF%E7%93%9C%E4%B9%A6%E5%86%B3%E7%AD%96%E6%A0%91/">http://garlicisnotmyfavor.xyz/2020/12/11/%E8%A5%BF%E7%93%9C%E4%B9%A6%E5%86%B3%E7%AD%96%E6%A0%91/</a></p></div><div class="licensing-meta level is-mobile"><div class="level-left"><div class="level-item is-narrow"><div><h6>作者</h6><p>Garlic</p></div></div><div class="level-item is-narrow"><div><h6>发布于</h6><p>2020-12-11</p></div></div><div class="level-item is-narrow"><div><h6>更新于</h6><p>2020-12-12</p></div></div><div class="level-item is-narrow"><div><h6>许可协议</h6><p><a class="icon" rel="noopener" target="_blank" title="Creative Commons" href="https://creativecommons.org/"><i class="fab fa-creative-commons"></i></a><a class="icon" rel="noopener" target="_blank" title="Attribution" href="https://creativecommons.org/licenses/by/4.0/"><i class="fab fa-creative-commons-by"></i></a><a class="icon" rel="noopener" target="_blank" title="Noncommercial" href="https://creativecommons.org/licenses/by-nc/4.0/"><i class="fab fa-creative-commons-nc"></i></a></p></div></div></div></div></div><div class="article-tags is-size-7 mb-4"><span class="mr-2">#</span><a class="link-muted mr-2" rel="tag" href="/tags/ML/">ML</a><a class="link-muted mr-2" rel="tag" href="/tags/%E5%86%B3%E7%AD%96%E6%A0%91/">决策树</a></div><div class="a2a_kit a2a_kit_size_32 a2a_default_style"><a class="a2a_dd" target="_blank" rel="noopener" href="https://www.addtoany.com/share"></a><a class="a2a_button_facebook"></a><a class="a2a_button_twitter"></a><a class="a2a_button_telegram"></a><a class="a2a_button_whatsapp"></a><a class="a2a_button_reddit"></a></div><script src="https://static.addtoany.com/menu/page.js" defer></script></article></div><div class="card"><div class="card-content"><h3 class="menu-label has-text-centered">喜欢这篇文章？打赏一下作者吧</h3><div class="buttons is-centered"><a class="button donate" data-type="wechat"><span class="icon is-small"><i class="fab fa-weixin"></i></span><span>微信</span><span class="qrcode"><img src="/img/wechatpay.jpg" alt="微信"></span></a></div></div></div><nav class="post-navigation mt-4 level is-mobile"><div class="level-end"><a class="article-nav-next level level-item link-muted" href="/2020/12/10/%E8%A5%BF%E7%93%9C%E4%B9%A6%E7%BA%BF%E6%80%A7%E6%A8%A1%E5%9E%8B/"><span class="level-item">西瓜书线性模型</span><i class="level-item fas fa-chevron-right"></i></a></div></nav><div class="card"><div class="card-content"><h3 class="title is-5">评论</h3><div id="disqus_thread"><noscript>Please enable JavaScript to view the <a target="_blank" rel="noopener" href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript></div><script>var disqus_config = function () {
+            this.page.url = 'http://garlicisnotmyfavor.xyz/2020/12/11/%E8%A5%BF%E7%93%9C%E4%B9%A6%E5%86%B3%E7%AD%96%E6%A0%91/';
+            this.page.identifier = '2020/12/11/西瓜书决策树/';
+        };
+        (function() {
+            var d = document, s = d.createElement('script');  
+            s.src = '//' + 'garlicisnotmyfavor' + '.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
+        })();</script></div></div></div><div class="column column-left is-4-tablet is-4-desktop is-3-widescreen  order-1"><div class="card widget" data-type="profile"><div class="card-content"><nav class="level"><div class="level-item has-text-centered flex-shrink-1"><div><figure class="image is-128x128 mx-auto mb-2"><img class="avatar" src="/img/avatar.jpg" alt="Garlic"></figure><p class="title is-size-4 is-block" style="line-height:inherit;">Garlic</p><p class="is-size-6 is-block">一生温暖纯良 不舍爱与自由</p></div></div></nav><nav class="level is-mobile"><div class="level-item has-text-centered is-marginless"><div><p class="heading">文章</p><a href="/archives"><p class="title">23</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">分类</p><a href="/categories"><p class="title">15</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">标签</p><a href="/tags"><p class="title">13</p></a></div></div></nav><div class="level"><a class="level-item button is-primary is-rounded" href="https://github.com/garlicisnotmyfavor" target="_blank" rel="noopener">关注我</a></div><div class="level is-mobile"><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Github" href="https://github.com/garlicisnotmyfavor"><i class="fab fa-github"></i></a></div></div></div><div class="card widget" id="toc" data-type="toc"><div class="card-content"><div class="menu"><h3 class="menu-label">目录</h3><ul class="menu-list"><li><a class="level is-mobile" href="#基本流程"><span class="level-left"><span class="level-item">1</span><span class="level-item">基本流程</span></span></a></li><li><a class="level is-mobile" href="#划分选择"><span class="level-left"><span class="level-item">2</span><span class="level-item">划分选择</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#信息增益"><span class="level-left"><span class="level-item">2.1</span><span class="level-item">信息增益</span></span></a></li><li><a class="level is-mobile" href="#增益率"><span class="level-left"><span class="level-item">2.2</span><span class="level-item">增益率</span></span></a></li><li><a class="level is-mobile" href="#基尼指数"><span class="level-left"><span class="level-item">2.3</span><span class="level-item">基尼指数</span></span></a></li></ul></li><li><a class="level is-mobile" href="#剪枝处理"><span class="level-left"><span class="level-item">3</span><span class="level-item">剪枝处理</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#预剪枝"><span class="level-left"><span class="level-item">3.1</span><span class="level-item">预剪枝</span></span></a></li><li><a class="level is-mobile" href="#后剪枝"><span class="level-left"><span class="level-item">3.2</span><span class="level-item">后剪枝</span></span></a></li></ul></li><li><a class="level is-mobile" href="#连续与缺失值"><span class="level-left"><span class="level-item">4</span><span class="level-item">连续与缺失值</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#连续值处理"><span class="level-left"><span class="level-item">4.1</span><span class="level-item">连续值处理</span></span></a></li><li><a class="level is-mobile" href="#缺失值处理"><span class="level-left"><span class="level-item">4.2</span><span class="level-item">缺失值处理</span></span></a></li></ul></li><li><a class="level is-mobile" href="#多变量决策树"><span class="level-left"><span class="level-item">5</span><span class="level-item">多变量决策树</span></span></a></li><li><a class="level is-mobile" href="#习题"><span class="level-left"><span class="level-item">6</span><span class="level-item">习题</span></span></a></li><li><a class="level is-mobile" href="#后续扩展"><span class="level-left"><span class="level-item">7</span><span class="level-item">后续扩展</span></span></a><ul class="menu-list"><ul class="menu-list"><li><a class="level is-mobile" href="#碎碎念"><span class="level-left"><span class="level-item">7.1.1</span><span class="level-item">碎碎念</span></span></a></li></ul></ul></li></ul></div></div><style>#toc .menu-list > li > a.is-active + .menu-list { display: block; }#toc .menu-list > li > a + .menu-list { display: none; }</style><script src="/js/toc.js" defer></script></div></div><!--!--></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo is-block mb-2" href="/">garlicisnotmyfavor</a><p class="is-size-7"><span>&copy; 2020 Garlic</span>  Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> &amp; <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a><br><span id="busuanzi_container_site_uv">共<span id="busuanzi_value_site_uv">0</span>个访客</span></p></div><div class="level-end"><div class="field has-addons"><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Creative Commons" href="https://creativecommons.org/"><i class="fab fa-creative-commons"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Attribution 4.0 International" href="https://creativecommons.org/licenses/by/4.0/"><i class="fab fa-creative-commons-by"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/ppoffice/hexo-theme-icarus"><i class="fab fa-github"></i></a></p></div></div></div></div></footer><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment-with-locales.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.4/clipboard.min.js" async></script><script>moment.locale("zh-CN");</script><script>var IcarusThemeSettings = {
+            article: {
+                highlight: {
+                    clipboard: true,
+                    fold: 'unfolded'
+                }
+            }
+        };</script><script src="/js/column.js"></script><script src="/js/animation.js"></script><a id="back-to-top" title="回到顶端" href="javascript:;"><i class="fas fa-chevron-up"></i></a><script src="/js/back_to_top.js" defer></script><!--!--><!--!--><!--!--><!--!--><script src="https://cdnjs.cloudflare.com/ajax/libs/cookieconsent/3.1.1/cookieconsent.min.js" defer></script><script>window.addEventListener("load", () => {
+      window.cookieconsent.initialise({
+        type: "info",
+        theme: "edgeless",
+        static: false,
+        position: "bottom-left",
+        content: {
+          message: "此网站使用Cookie来改善您的体验。",
+          dismiss: "知道了！",
+          allow: "允许使用Cookie",
+          deny: "拒绝",
+          link: "了解更多",
+          policy: "Cookie政策",
+          href: "https://www.cookiesandyou.com/",
+        },
+        palette: {
+          popup: {
+            background: "#edeff5",
+            text: "#838391"
+          },
+          button: {
+            background: "#4b81e8"
+          },
+        },
+      });
+    });</script><script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/1.6.8/js/lightgallery.min.js" defer></script><script src="https://cdnjs.cloudflare.com/ajax/libs/justifiedGallery/3.7.0/js/jquery.justifiedGallery.min.js" defer></script><script>window.addEventListener("load", () => {
+            if (typeof $.fn.lightGallery === 'function') {
+                $('.article').lightGallery({ selector: '.gallery-item' });
+            }
+            if (typeof $.fn.justifiedGallery === 'function') {
+                if ($('.justified-gallery > p > .gallery-item').length) {
+                    $('.justified-gallery > p > .gallery-item').unwrap();
+                }
+                $('.justified-gallery').justifiedGallery();
+            }
+        });</script><!--!--><!--!--><script type="text/x-mathjax-config">MathJax.Hub.Config({
+            'HTML-CSS': {
+                matchFontHeight: false
+            },
+            SVG: {
+                matchFontHeight: false
+            },
+            CommonHTML: {
+                matchFontHeight: false
+            },
+            tex2jax: {
+                inlineMath: [
+                    ['$','$'],
+                    ['\\(','\\)']
+                ]
+            }
+        });</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML" defer></script><!--!--><!--!--><!--!--><script src="/js/main.js" defer></script><div class="searchbox"><div class="searchbox-container"><div class="searchbox-header"><div class="searchbox-input-container"><input class="searchbox-input" type="text" placeholder="想要查找什么..."></div><a class="searchbox-close" href="javascript:;">×</a></div><div class="searchbox-body"></div></div></div><script src="/js/insight.js" defer></script><script>document.addEventListener('DOMContentLoaded', function () {
+            loadInsight({"contentUrl":"/content.json"}, {"hint":"想要查找什么...","untitled":"(无标题)","posts":"文章","pages":"页面","categories":"分类","tags":"标签"});
+        });</script></body></html>
