@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="zh"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta><title>iceberg - Garlicisnotmyfavor</title><link rel="manifest" href="/manifest.json"><meta name="application-name" content="Garlicisnotmyfavor"><meta name="msapplication-TileImage" content="/img/favicon.svg"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="Garlicisnotmyfavor"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta description="大数据处理平台里的n多名词对我来说都很陌生，😔这篇主要是普及的东西，还没有形成自己的体系很乱有些东西也还没来得及写上去，持续补充….."><meta property="og:type" content="blog"><meta property="og:title" content="iceberg"><meta property="og:url" content="http://garlicisnotmyfavor.xyz/2021/01/21/iceberg/"><meta property="og:site_name" content="Garlicisnotmyfavor"><meta property="og:description" content="大数据处理平台里的n多名词对我来说都很陌生，😔这篇主要是普及的东西，还没有形成自己的体系很乱有些东西也还没来得及写上去，持续补充….."><meta property="og:locale" content="zh_CN"><meta property="og:image" content="https://jpg.macz.com/pic/202009/04135000_731a2564b4.jpeg"><meta property="article:published_time" content="2021-01-21T03:14:45.000Z"><meta property="article:modified_time" content="2021-01-21T13:27:41.887Z"><meta property="article:author" content="Garlic"><meta property="article:tag" content="Hadoop"><meta property="article:tag" content="Spark"><meta property="article:tag" content="IceBerg"><meta property="twitter:card" content="summary"><meta property="twitter:image" content="https://jpg.macz.com/pic/202009/04135000_731a2564b4.jpeg"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"http://garlicisnotmyfavor.xyz/2021/01/21/iceberg/"},"headline":"Garlicisnotmyfavor","image":[],"datePublished":"2021-01-21T03:14:45.000Z","dateModified":"2021-01-21T13:27:41.887Z","author":{"@type":"Person","name":"Garlic"},"description":"大数据处理平台里的n多名词对我来说都很陌生，😔这篇主要是普及的东西，还没有形成自己的体系很乱有些东西也还没来得及写上去，持续补充….."}</script><link rel="canonical" href="http://garlicisnotmyfavor.xyz/2021/01/21/iceberg/"><link rel="icon" href="/img/favicon.svg"><link rel="stylesheet" href="https://cdnjs.loli.net/ajax/libs/font-awesome/5.12.0/css/all.min.css"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-light.min.css"><link rel="stylesheet" href="https://fonts.loli.net/css2?family=Ubuntu:wght@400;600&amp;family=Source+Code+Pro"><link rel="stylesheet" href="/css/default.css"><style>body>.footer,body>.navbar,body>.section{opacity:0}</style><!--!--><!--!--><!--!--><!--!--><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/cookieconsent/3.1.1/cookieconsent.min.css"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/1.6.8/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/justifiedGallery/3.7.0/css/justifiedGallery.min.css"><!--!--><!--!--><!--!--><script src="https://cdnjs.cloudflare.com/ajax/libs/pace/1.0.2/pace.min.js"></script><!--!--><!--!--><meta name="generator" content="Hexo 5.2.0"></head><body class="is-2-column"><nav class="navbar navbar-main"><div class="container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/">garlicisnotmyfavor</a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/">首页</a><a class="navbar-item" href="/archives">归档</a><a class="navbar-item" href="/categories">分类</a><a class="navbar-item" href="/tags">标签</a><a class="navbar-item" href="/about">About</a></div><div class="navbar-end"><a class="navbar-item" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/ppoffice/hexo-theme-icarus"><i class="fab fa-github"></i></a><a class="navbar-item search" title="搜索" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-9-widescreen"><div class="card"><div class="card-image"><span class="image is-7by3"><img class="fill" src="https://jpg.macz.com/pic/202009/04135000_731a2564b4.jpeg" alt="iceberg"></span></div><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2021-01-21T03:14:45.000Z" title="2021-01-21T03:14:45.000Z">2021-01-21</time>发表</span><span class="level-item"><time dateTime="2021-01-21T13:27:41.887Z" title="2021-01-21T13:27:41.887Z">2021-01-21</time>更新</span><span class="level-item"><a class="link-muted" href="/categories/%E5%BC%80%E5%8F%91/">开发</a><span> / </span><a class="link-muted" href="/categories/%E5%BC%80%E5%8F%91/%E5%A4%A7%E6%95%B0%E6%8D%AE/">大数据</a></span><span class="level-item">10 分钟读完 (大约1451个字)</span></div></div><h1 class="title is-3 is-size-4-mobile">iceberg</h1><div class="content"><p>大数据处理平台里的n多名词对我来说都很陌生，😔这篇主要是普及的东西，还没有形成自己的体系很乱有些东西也还没来得及写上去，持续补充…..</p>
+<a id="more"></a>
+
+<h4 id="Hadoop（分布式系统基础架构）"><a href="#Hadoop（分布式系统基础架构）" class="headerlink" title="Hadoop（分布式系统基础架构）"></a>Hadoop（分布式系统基础架构）</h4><p>一个开源的分布式计算框架，允许使用简单编程模型跨计算机集群处理大型数据集合的框架，设计初衷是将单个服务器扩展成上千个机器组成的一个集群为大数据提供计算服务。</p>
+<h4 id="Spark（计算引擎）"><a href="#Spark（计算引擎）" class="headerlink" title="Spark（计算引擎）"></a>Spark（计算引擎）</h4><p>Spark其实是最初的MapReduce计算引擎的二代版，优化了抽象层次低，中间结果难复用，交互性不好等问题</p>
+<p>用于Hadoop数据的快速通用计算引擎，在大的Hadoop中的优势如下：</p>
+<ul>
+<li>速度快</li>
+<li>易用性：可以使用java，Scala，Python，R以及SQL快速写Spark应用</li>
+<li>通用性：支持SQL，流数据处理及复杂分析<ul>
+<li>Spark SQL DataFrame API: 统计计算时，最常接触的部分</li>
+<li>Spark Streaming: 流式计算，也可被用作数据集成工具，DataFlow 数据集成部分的实现载体</li>
+<li>Spark Mlib: 机器学习部分，主要是统计学习相关，特征工程/分类/聚类/回归/频繁模式 …</li>
+<li>Spark GraphX: 图计算相关，标签传播</li>
+</ul>
+</li>
+<li>支持多种模式运行：Hadoop，Kubernete，云等</li>
+</ul>
+<h5 id="Scala（语言）"><a href="#Scala（语言）" class="headerlink" title="Scala（语言）"></a>Scala（语言）</h5><p>一种语言，支持Spark（但Spark可以使用多种语言进行交互）</p>
+<h5 id="HDFS（Hadoop-Distributed-File-System）"><a href="#HDFS（Hadoop-Distributed-File-System）" class="headerlink" title="HDFS（Hadoop Distributed File System）"></a>HDFS（Hadoop Distributed File System）</h5><p>它是Hadoop兼容最好的标准级文件系统</p>
+<h5 id="Hive"><a href="#Hive" class="headerlink" title="Hive"></a>Hive</h5><p>提供数据汇总和特定查询的数据仓库</p>
+<h5 id="Kudu"><a href="#Kudu" class="headerlink" title="Kudu"></a>Kudu</h5><p>列式存储，偏向于实时计算 OLAP</p>
+<h5 id="HBase"><a href="#HBase" class="headerlink" title="HBase"></a>HBase</h5><p>列式存储，偏向于海量事物 OLTP</p>
+<h5 id="Impala-Presto"><a href="#Impala-Presto" class="headerlink" title="Impala/Presto"></a>Impala/Presto</h5><p>内存计算MPP引擎，比 Spark 有速度&amp;并行查询优势</p>
+<h5 id="Flink"><a href="#Flink" class="headerlink" title="Flink"></a>Flink</h5><p>比 Spark 做的更好的流计算。</p>
+<ul>
+<li><p>流式模式：</p>
+<ul>
+<li>延迟短</li>
+<li>数据完整度较差：因为流式引擎不会等到所有数据到齐后再计算，有一个watermark的概念，当数据的时间小于watermark时就会被丢弃。在大部分场景中，用户需要开发两个程序，一是流式数据生产流式结果，二是批式计算任务，用于次日修复实时结果</li>
+<li>成本高</li>
+</ul>
+</li>
+<li><p>批式模式：小时任务或者天任务来做数据计算</p>
+<ul>
+<li>延迟：小时级或者天级别的延迟</li>
+<li>数据完整度较高</li>
+<li>成本低</li>
+</ul>
+</li>
+<li><p>Copy-On-Write Table</p>
+<p>对于 Copy-On-Write Table，用户的 update 会重写数据所在的文件，所以是一个写放大很高，但是读放大为 0，适合写少读多的场景。对于这种 Table，提供了两种查询：</p>
+<ul>
+<li>Snapshot Query: 查询最近一次 snapshot 的数据，也就是最新的数据。</li>
+<li>Incrementabl Query:用户需要指定一个 commit time，然后 Hudi 会扫描文件中的记录，过滤出 commit_time &gt; 用户指定的 commit time 的记录。</li>
+</ul>
+</li>
+<li><p>Merge-On-Read Table</p>
+<p>对于 Merge-On-Read Table，整体的结构有点像 LSM-Tree，用户的写入先写入到 delta data 中，这部分数据使用行存，这部分 delta data 可以手动 merge 到存量文件中，整理为 parquet 的列存结构。对于这类 Tabel，提供了三种查询：</p>
+<ul>
+<li><p>Snapshot Query: 查询最近一次 snapshot 的数据，也就是最新的数据。这里是一个行列数据混合的查询。</p>
+</li>
+<li><p>Incrementabl Query:用户需要指定一个 commit time，然后 Hudi 会扫描文件中的记录，过滤出 commit_time &gt; 用户指定的 commit time 的记录。这里是一个行列数据混合的查询。</p>
+</li>
+<li><p>Read Optimized Query: 只查存量数据，不查增量数据，因为使用的都是列式文件格式，所以效率较高。</p>
+</li>
+</ul>
+</li>
+</ul>
+<p>当 Flink 程序执行时，其被映射成 Streaming Dataflow，由如下的部分组成：</p>
+<ul>
+<li>Source (operator)：接收外部输入给 Flink；</li>
+<li>Transformation (operator)：中间对 stream 做的任何操作；</li>
+<li>Sink (operator)：Flink 输出给外部。</li>
+</ul>
+<h5 id="Druid"><a href="#Druid" class="headerlink" title="Druid"></a>Druid</h5><p>预聚合CUBE引擎</p>
+<h5 id="ElasticSearch（搜索分析引擎）"><a href="#ElasticSearch（搜索分析引擎）" class="headerlink" title="ElasticSearch（搜索分析引擎）"></a>ElasticSearch（搜索分析引擎）</h5><p>是一个分布式的开源搜索和分析引擎，适用于所有类型的数据，包括文本、数字、结构化和非结构化数据。</p>
+<h4 id="iceberg（数据湖框架）"><a href="#iceberg（数据湖框架）" class="headerlink" title="iceberg（数据湖框架）"></a>iceberg（数据湖框架）</h4><p>什么是数据湖框架？其实是一种对仓库中数据的管理框架，之前使用的大多是Hive，但是单一使用它作为数仓不能满足对数据存取效率的要求，现在出来的常用的三个开源软件Delta Lake，Apache Hudi和Apache iceberg都指向对Hive的改良，既提供一个数据仓库的功能，同时还给仓库配上标签信息、监控工具、智能运输等功能。其中iceberg就专注于用iceberg table来统一所有的table</p>
+<p>iceberg可适配Spark等引擎提供高性能的读写和元数据管理功能，介于计算引擎之下存储引擎之上的一种数据存储组织格式。</p>
+<p>Q：隐式分区怎样做到的</p>
+<p>流式计算checkpoint</p>
+<img src="1.png" width = "480" height = "250" align=center />
+
+<p>Streaming Write的模板代码</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">val tableIdentifier: String &#x3D; ...</span><br><span class="line">data.writeStream</span><br><span class="line">    .format(&quot;iceberg&quot;)</span><br><span class="line">    .outputMode(&quot;append&quot;)</span><br><span class="line">    .trigger(Trigger.ProcessingTime(1, TimeUnit.MINUTES))</span><br><span class="line">    .option(&quot;path&quot;, tableIdentifier)</span><br><span class="line">    .option(&quot;checkpointLocation&quot;, checkpointPath)</span><br><span class="line">    .start()</span><br></pre></td></tr></table></figure>
+
+<p>文件存储的方式：哈希，csv，parquet，orc，Avro（向量化读取方式统一）</p>
+<p>参考链接</p>
+<p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/wing1995/p/9300120.html">https://www.cnblogs.com/wing1995/p/9300120.html</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.elastic.co/cn/what-is/elasticsearch">https://www.elastic.co/cn/what-is/elasticsearch</a></p>
+<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/149706105">https://zhuanlan.zhihu.com/p/149706105</a></p>
+</div><div class="article-licensing box"><div class="licensing-title"><p>iceberg</p><p><a href="http://garlicisnotmyfavor.xyz/2021/01/21/iceberg/">http://garlicisnotmyfavor.xyz/2021/01/21/iceberg/</a></p></div><div class="licensing-meta level is-mobile"><div class="level-left"><div class="level-item is-narrow"><div><h6>作者</h6><p>Garlic</p></div></div><div class="level-item is-narrow"><div><h6>发布于</h6><p>2021-01-21</p></div></div><div class="level-item is-narrow"><div><h6>更新于</h6><p>2021-01-21</p></div></div><div class="level-item is-narrow"><div><h6>许可协议</h6><p><a class="icon" rel="noopener" target="_blank" title="Creative Commons" href="https://creativecommons.org/"><i class="fab fa-creative-commons"></i></a><a class="icon" rel="noopener" target="_blank" title="Attribution" href="https://creativecommons.org/licenses/by/4.0/"><i class="fab fa-creative-commons-by"></i></a><a class="icon" rel="noopener" target="_blank" title="Noncommercial" href="https://creativecommons.org/licenses/by-nc/4.0/"><i class="fab fa-creative-commons-nc"></i></a></p></div></div></div></div></div><div class="article-tags is-size-7 mb-4"><span class="mr-2">#</span><a class="link-muted mr-2" rel="tag" href="/tags/Hadoop/">Hadoop</a><a class="link-muted mr-2" rel="tag" href="/tags/Spark/">Spark</a><a class="link-muted mr-2" rel="tag" href="/tags/IceBerg/">IceBerg</a></div><div class="a2a_kit a2a_kit_size_32 a2a_default_style"><a class="a2a_dd" target="_blank" rel="noopener" href="https://www.addtoany.com/share"></a><a class="a2a_button_facebook"></a><a class="a2a_button_twitter"></a><a class="a2a_button_telegram"></a><a class="a2a_button_whatsapp"></a><a class="a2a_button_reddit"></a></div><script src="https://static.addtoany.com/menu/page.js" defer></script></article></div><div class="card"><div class="card-content"><h3 class="menu-label has-text-centered">喜欢这篇文章？打赏一下作者吧</h3><div class="buttons is-centered"><a class="button donate" data-type="wechat"><span class="icon is-small"><i class="fab fa-weixin"></i></span><span>微信</span><span class="qrcode"><img src="/img/wechatpay.jpg" alt="微信"></span></a></div></div></div><nav class="post-navigation mt-4 level is-mobile"><div class="level-end"><a class="article-nav-next level level-item link-muted" href="/2020/12/07/%E5%9B%BE/"><span class="level-item">图</span><i class="level-item fas fa-chevron-right"></i></a></div></nav><div class="card"><div class="card-content"><h3 class="title is-5">评论</h3><div id="disqus_thread"><noscript>Please enable JavaScript to view the <a target="_blank" rel="noopener" href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript></div><script>var disqus_config = function () {
+            this.page.url = 'http://garlicisnotmyfavor.xyz/2021/01/21/iceberg/';
+            this.page.identifier = '2021/01/21/iceberg/';
+        };
+        (function() {
+            var d = document, s = d.createElement('script');  
+            s.src = '//' + 'garlicisnotmyfavor' + '.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
+        })();</script></div></div></div><div class="column column-left is-4-tablet is-4-desktop is-3-widescreen  order-1"><div class="card widget" data-type="profile"><div class="card-content"><nav class="level"><div class="level-item has-text-centered flex-shrink-1"><div><figure class="image is-128x128 mx-auto mb-2"><img class="avatar" src="/img/avatar.jpg" alt="Garlic"></figure><p class="title is-size-4 is-block" style="line-height:inherit;">Garlic</p><p class="is-size-6 is-block">一生温暖纯良 不舍爱与自由</p></div></div></nav><nav class="level is-mobile"><div class="level-item has-text-centered is-marginless"><div><p class="heading">文章</p><a href="/archives"><p class="title">24</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">分类</p><a href="/categories"><p class="title">13</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">标签</p><a href="/tags"><p class="title">20</p></a></div></div></nav><div class="level"><a class="level-item button is-primary is-rounded" href="https://github.com/garlicisnotmyfavor" target="_blank" rel="noopener">关注我</a></div><div class="level is-mobile"><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Github" href="https://github.com/garlicisnotmyfavor"><i class="fab fa-github"></i></a></div></div></div><!--!--></div><!--!--></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo is-block mb-2" href="/">garlicisnotmyfavor</a><p class="is-size-7"><span>&copy; 2021 Garlic</span>  Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> &amp; <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a></p></div><div class="level-end"><div class="field has-addons"><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Creative Commons" href="https://creativecommons.org/"><i class="fab fa-creative-commons"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Attribution 4.0 International" href="https://creativecommons.org/licenses/by/4.0/"><i class="fab fa-creative-commons-by"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/ppoffice/hexo-theme-icarus"><i class="fab fa-github"></i></a></p></div></div></div></div></footer><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment-with-locales.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.4/clipboard.min.js" async></script><script>moment.locale("zh-CN");</script><script>var IcarusThemeSettings = {
+            article: {
+                highlight: {
+                    clipboard: true,
+                    fold: 'unfolded'
+                }
+            }
+        };</script><script src="/js/column.js"></script><script src="/js/animation.js"></script><a id="back-to-top" title="回到顶端" href="javascript:;"><i class="fas fa-chevron-up"></i></a><script src="/js/back_to_top.js" defer></script><!--!--><!--!--><!--!--><script src="https://cdnjs.cloudflare.com/ajax/libs/cookieconsent/3.1.1/cookieconsent.min.js" defer></script><script>window.addEventListener("load", () => {
+      window.cookieconsent.initialise({
+        type: "info",
+        theme: "edgeless",
+        static: false,
+        position: "bottom-left",
+        content: {
+          message: "此网站使用Cookie来改善您的体验。",
+          dismiss: "知道了！",
+          allow: "允许使用Cookie",
+          deny: "拒绝",
+          link: "了解更多",
+          policy: "Cookie政策",
+          href: "https://www.cookiesandyou.com/",
+        },
+        palette: {
+          popup: {
+            background: "#edeff5",
+            text: "#838391"
+          },
+          button: {
+            background: "#4b81e8"
+          },
+        },
+      });
+    });</script><script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/1.6.8/js/lightgallery.min.js" defer></script><script src="https://cdnjs.cloudflare.com/ajax/libs/justifiedGallery/3.7.0/js/jquery.justifiedGallery.min.js" defer></script><script>window.addEventListener("load", () => {
+            if (typeof $.fn.lightGallery === 'function') {
+                $('.article').lightGallery({ selector: '.gallery-item' });
+            }
+            if (typeof $.fn.justifiedGallery === 'function') {
+                if ($('.justified-gallery > p > .gallery-item').length) {
+                    $('.justified-gallery > p > .gallery-item').unwrap();
+                }
+                $('.justified-gallery').justifiedGallery();
+            }
+        });</script><!--!--><!--!--><script type="text/x-mathjax-config">MathJax.Hub.Config({
+            'HTML-CSS': {
+                matchFontHeight: false
+            },
+            SVG: {
+                matchFontHeight: false
+            },
+            CommonHTML: {
+                matchFontHeight: false
+            },
+            tex2jax: {
+                inlineMath: [
+                    ['$','$'],
+                    ['\\(','\\)']
+                ]
+            }
+        });</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML" defer></script><!--!--><!--!--><!--!--><script src="/js/main.js" defer></script><div class="searchbox"><div class="searchbox-container"><div class="searchbox-header"><div class="searchbox-input-container"><input class="searchbox-input" type="text" placeholder="想要查找什么..."></div><a class="searchbox-close" href="javascript:;">×</a></div><div class="searchbox-body"></div></div></div><script src="/js/insight.js" defer></script><script>document.addEventListener('DOMContentLoaded', function () {
+            loadInsight({"contentUrl":"/content.json"}, {"hint":"想要查找什么...","untitled":"(无标题)","posts":"文章","pages":"页面","categories":"分类","tags":"标签"});
+        });</script></body></html>
